@@ -8,7 +8,7 @@ npm install --save-dev eslint eslint-config-airbnb eslint-plugin-import eslint-p
 **Configuration:**
 <p>Create an <b>.eslintrc.json</b> file in your project root and add the following configuration:</p>
 
-```JSON
+```JavaScript
 {
   "extends": ["eslint:recommended", "airbnb", "plugin:import/errors", "plugin:import/warnings", "plugin:react/recommended", "next/core-web-vitals"],
   "parser": "babel-eslint",
@@ -40,6 +40,8 @@ npm install --save-dev eslint eslint-config-airbnb eslint-plugin-import eslint-p
 
 ```
 
+<p>This configuration extends Airbnb's style guide with React-specific rules and allows console logs with a warning. You can adjust the rules to your preferences.</p>
+
 ### Setting Up Script (Optional):
 
 <p>For convenience, you can create a script in your package.json to automate formatting:</p>
@@ -52,7 +54,7 @@ npm install --save-dev eslint eslint-config-airbnb eslint-plugin-import eslint-p
 }
 ```
 
-<p>This configuration extends Airbnb's style guide with React-specific rules and allows console logs with a warning. You can adjust the rules to your preferences.</p>
+<p>Now you can run "<b>npm run format</b>" to format your files.</p>
 
 ### Recommended Practices
 
