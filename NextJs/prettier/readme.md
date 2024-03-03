@@ -6,7 +6,7 @@ npm install --save-dev prettier
 ```
 
 **Configuration:**
-<p>Create a **.prettierrc** file in your project root with the following content:</p>
+<p>Create a <b>.prettierrc</b> file in your project root with the following content:</p>
 
 ```
 {
@@ -22,7 +22,7 @@ npm install --save-dev prettier
 ```
 
 **Ignore File (Optional but recommended)**
-<p>Create a **.prettierignore** file in your project root with the following content:</p>
+<p>Create a <b>.prettierignore</b> file in your project root with the following content:</p>
 
 ```
 node_modules/
