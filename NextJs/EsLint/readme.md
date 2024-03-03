@@ -8,9 +8,9 @@ npm install --save-dev eslint eslint-config-airbnb eslint-plugin-import eslint-p
 **Configuration:**
 <p>Create an <b>.eslintrc.json</b> file in your project root and add the following configuration:</p>
 
-```
+```JSON
 {
-  "extends": ["eslint:recommended", "airbnb", "plugin:import/errors", "plugin:import/warnings", "plugin:react/recommended"],
+  "extends": ["eslint:recommended", "airbnb", "plugin:import/errors", "plugin:import/warnings", "plugin:react/recommended", "next/core-web-vitals"],
   "parser": "babel-eslint",
   "parserOptions": {
     "ecmaFeatures": {
@@ -25,9 +25,29 @@ npm install --save-dev eslint eslint-config-airbnb eslint-plugin-import eslint-p
   },
   "plugins": ["import", "react"],
   "rules": {
+    "no-unused-vars": [
+      "error",
+      { "varsIgnorePattern": "^_" } // Allow ignoring variables starting with underscore for private usage
+    ],
     "no-console": "warn", // Allow console logs with a warning
     "react/prop-types": 0, // Disable prop-types for simplicity (consider using TypeScript for type safety)
-    "import/order": ["next", "groups", "builtin", "external", "internal", "parent", "sibling", "index"] // Import ordering (optional)
+    "import/extensions": ["error", "ignorePackages", { "js": "always", "jsx": "always" }],
+    "import/order": ["next", "groups", "builtin", "external", "internal", "parent", "sibling", "index"], // Import ordering (optional)
+    "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx", ".ts", ".tsx"] }] // Allow JSX in all relevant extensions
+    // Add or modify other ESLint rules as needed
+  }
+}
+
+```
+
+### Setting Up Script (Optional):
+
+<p>For convenience, you can create a script in your package.json to automate formatting:</p>
+
+```JSON
+{
+  "scripts": {
+    "format": "prettier --write . && eslint ."
   }
 }
 ```

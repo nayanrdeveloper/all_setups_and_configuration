@@ -8,7 +8,7 @@ npm install --save-dev prettier
 **Configuration:**
 <p>Create a <b>.prettierrc</b> file in your project root with the following content:</p>
 
-```
+```JSON
 {
   "singleQuote": true,
   "semi": true,
